@@ -1,0 +1,8 @@
+{
+    "firstname": "Eslam",
+    "lastname" : "Roshdy",
+    "totalprice" : 250,
+    "depositpaid" : "@#$%",
+    "bookingdates" : "@@@@-$$-30",
+    "additionalneeds" : "Breakfast"
+}

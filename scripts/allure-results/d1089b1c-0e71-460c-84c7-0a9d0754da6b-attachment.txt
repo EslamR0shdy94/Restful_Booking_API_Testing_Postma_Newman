@@ -1,0 +1,10 @@
+{
+    "firstname" : "Eslam",
+    "lastname": "Roshdy",
+    "depositpaid" : false,
+    "bookingdates" : {
+        "checkin" : "2025-10-25",
+        "checkout" : "2025-11-05"
+    },
+    "additionalneeds" : "coffe"
+}

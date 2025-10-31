@@ -1,0 +1,7 @@
+{
+    "firstname": "Eslam",
+    "lastname": "Roshdy",
+    "totalprice" : 250,
+    "depositpaid": true,
+    "additionalneeds" : "Breakfast"
+}

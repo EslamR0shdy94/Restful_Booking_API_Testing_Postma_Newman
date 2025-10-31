@@ -1,0 +1,9 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Duplicate fields: last key overrides previous ones", function () {
+    let res = pm.response.json();
+
+    // expected value of the last duplicate key
+    pm.expect(res.booking.firstname).to.eql("Eslam");
+});

@@ -1,0 +1,1 @@
+{"firstname":"Ahmed","lastname":"Fathy","totalprice":400,"depositpaid":true,"bookingdates":{"checkin":"2025-10-25","checkout":"2025-10-30"},"additionalneeds":"Coffe"}

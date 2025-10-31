@@ -1,0 +1,16 @@
+{
+    "firstname" : "Marwan",
+    "lastname" : "Mosa",
+    "totalprice" : 250,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2025-10-25",
+        "checkout" : "2025-10-30"
+    },
+    "extra": [
+        "Eslam",
+        500,
+        true
+        ],
+    "additionalneeds" : "Breakfast"
+}
