@@ -1,0 +1,13 @@
+{
+    "Authorization": "Basic",
+    "Cookie": "token=a5988901dc661d5",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "5d40c1f5-9640-4215-b0fe-f1cc61ddfbdb",
+    "Host": "restful-booker.herokuapp.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "243"
+}

@@ -1,0 +1,8 @@
+{
+    "firstname": "Eslam",
+    "lastname" : "Roshdy",
+    "totalprice" : 250,
+    "depositpaid" : 300,
+    "bookingdates" : 20251210,
+    "additionalneeds" : "Breakfast"
+}

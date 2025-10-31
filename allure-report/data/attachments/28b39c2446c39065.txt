@@ -1,0 +1,1 @@
+{"firstname":"Eslam","lastname":"Roshdy","totalprice":300,"depositpaid":true,"bookingdates":{"checkin":"0NaN-aN-aN","checkout":"0NaN-aN-aN"},"additionalneeds":"Breakfast"}

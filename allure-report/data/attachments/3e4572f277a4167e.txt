@@ -1,0 +1,7 @@
+{
+    "firstname" : "Marwan",
+    "lastname" : "mosa",
+    "age": 30,
+    "country": "Egypt",
+    "additionalneeds" : "Breakfast"
+}

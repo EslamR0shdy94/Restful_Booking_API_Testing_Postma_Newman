@@ -1,0 +1,1 @@
+{"firstname":"Roshdy","lastname":"Marawan","totalprice":300,"depositpaid":false,"bookingdates":{"checkin":"2025-10-25","checkout":"2025-10-30"},"additionalneeds":"coffe"}

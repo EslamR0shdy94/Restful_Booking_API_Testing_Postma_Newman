@@ -1,0 +1,23 @@
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("API should ignore extra fields (age, country) inside bookingdates", function () {
+    let res = pm.response.json();
+
+    pm.expect(res).to.have.property("booking");
+
+    pm.expect(res.booking).to.have.property("bookingdates");
+
+    pm.expect(res.booking.bookingdates).to.not.have.property("age");
+    pm.expect(res.booking.bookingdates).to.not.have.property("country");
+
+    pm.expect(res.booking.firstname).to.eql("Eslam");
+    pm.expect(res.booking.lastname).to.eql("Roshdy");
+    pm.expect(res.booking.totalprice).to.eql(250);
+    pm.expect(res.booking.depositpaid).to.eql(true);
+
+    pm.expect(res.booking.bookingdates.checkin).to.eql("2025-10-25");
+    pm.expect(res.booking.bookingdates.checkout).to.eql("2025-10-30");
+});

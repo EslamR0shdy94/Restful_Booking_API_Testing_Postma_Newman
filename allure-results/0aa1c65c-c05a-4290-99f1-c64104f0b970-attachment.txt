@@ -1,0 +1,43 @@
+pm.sendRequest({
+    url: "https://restful-booker.herokuapp.com/booking",
+    method: "POST",
+    header: {
+        "Content-Type": "application/json"
+    },
+    body: {
+        mode: "raw",
+        raw: JSON.stringify({
+             "firstname" : "Ahmed",
+              "lastname" : "Fathy",
+             "totalprice" : 400,
+             "depositpaid" : true,
+                "bookingdates" : {
+                     "checkin" : "2025-10-25",
+                    "checkout" : "2025-10-30"
+                },
+    "additionalneeds" : "Dinner"
+        })
+    }
+}, (err, res) => {
+    if (err) {
+        console.log("❌ Error Creating Booking:", err);
+        return;
+    }
+
+    let bookingData = res.json();
+    let bookingId = bookingData.bookingid;
+
+    pm.environment.set("bookingid", bookingId);
+
+    pm.visualizer.set(`
+        <h2 style="color:green;"> Booking Created Before Deletion</h2>
+        <p style="color:white;"><strong style="color:red;">ID:</strong> ${bookingId}</p>
+        <p style="color:white;"><strong style="color:red;">Name:</strong> ${bookingData.booking.firstname} ${bookingData.booking.lastname}</p>
+        <p style="color:white;"><strong style="color:red;">Total Price:</strong> ${bookingData.booking.totalprice}</p>
+        <p style="color:white;"><strong style="color:red;">Check-in:</strong> ${bookingData.booking.bookingdates.checkin}</p>
+        <p style="color:white;"><strong style="color:red;">Check-out:</strong> ${bookingData.booking.bookingdates.checkout}</p>
+        <p style="color:white;"><strong style="color:red;">Additional Needs:</strong> ${bookingData.booking.additionalneeds}</p>
+    `);
+
+    console.log(" Booking created successfully! ID:", bookingId);
+});

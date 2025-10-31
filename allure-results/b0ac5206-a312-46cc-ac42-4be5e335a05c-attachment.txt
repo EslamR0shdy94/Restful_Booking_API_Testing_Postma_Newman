@@ -1,0 +1,65 @@
+pm.sendRequest({
+    url: "https://restful-booker.herokuapp.com/auth",
+    method: "POST",
+    header: {
+        "Content-Type": "application/json"
+    },
+    body: {
+        mode: "raw",
+        raw: JSON.stringify({
+            username: pm.environment.get("username") || "admin",
+            password: pm.environment.get("password") || "password123"
+        })
+    }
+}, (err, res) => {
+    if (err) {
+        console.log(" Error generating token:", err);
+        return;
+    }
+
+    let token = res.json().token;
+    pm.environment.set("token", token);
+    console.log("New token saved:", token);
+});
+pm.sendRequest({
+    url: "https://restful-booker.herokuapp.com/booking",
+    method: "POST",
+    header: {
+        "Content-Type": "application/json"
+    },
+    body: {
+        mode: "raw",
+        raw: JSON.stringify({
+             "firstname" : "Ahmed",
+              "lastname" : "Fathy",
+             "totalprice" : 400,
+             "depositpaid" : true,
+                "bookingdates" : {
+                     "checkin" : "2025-10-25",
+                    "checkout" : "2025-10-30"
+                },
+    "additionalneeds" : "Coffe"
+        })
+    }
+}, (err2, res2) => {
+    if (err2) {
+        console.log(" Error Creating Booking:", err2);
+        return;
+    }
+    let token = pm.environment.get("token");
+    let bookingData = res2.json();
+    pm.environment.set("partial_update_bookingid", bookingData.bookingid);
+
+    pm.visualizer.set(`
+        <h2 style="color:green;">Booking Created Before Partial Update (Unexpected Negative Scenarios)</h2>
+            <p style="color:white;"><strong style="color:red;">Token:</strong> ${token}</p>
+                <p style="color:white;"><strong style="color:red;">Booking ID:</strong> ${bookingData.bookingid}</p>
+        <p style="color:white;"><strong style="color:red;">Name:</strong> ${bookingData.booking.firstname} ${bookingData.booking.lastname}</p>
+        <p style="color:white;"><strong style="color:red;">Total Price:</strong> ${bookingData.booking.totalprice}</p>
+        <p style="color:white;"><strong style="color:red;">Check-in:</strong> ${bookingData.booking.bookingdates.checkin}</p>
+        <p style="color:white;"><strong style="color:red;">Check-out:</strong> ${bookingData.booking.bookingdates.checkout}</p>
+        <p style="color:white;"><strong style="color:red;">Additional Needs:</strong> ${bookingData.booking.additionalneeds}</p>
+    `);
+
+    console.log("Booking created successfully! ID:", bookingData.bookingid);
+});
