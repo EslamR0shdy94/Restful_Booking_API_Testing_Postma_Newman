@@ -126,6 +126,11 @@ allure open allure-report
     - 403 → Forbidden / Invalid token
         
     - 404 → Resource not found
+
+    - 500 → Internal server error
+
+    - 400 → Bad Request
+
         
 - **Validation Points:**
     
@@ -146,3 +151,4 @@ allure open allure-report
 
 
 ---
+
