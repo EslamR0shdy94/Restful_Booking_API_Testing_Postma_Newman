@@ -1,2 +1,0 @@
-level: log, messages: New token saved:,6e6c8b086463767
-level: log, messages: Booking created successfully! ID:,2462

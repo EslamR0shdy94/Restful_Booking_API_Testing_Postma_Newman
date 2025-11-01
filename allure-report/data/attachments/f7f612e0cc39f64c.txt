@@ -1,6 +1,0 @@
-pm.test("Status code is 403", function () {
-    pm.response.to.have.status(403);
-});
-pm.test("Deleting Error message to have : Forbidden", function () {
-    pm.expect(pm.response.text()).to.include("Forbidden");
-});

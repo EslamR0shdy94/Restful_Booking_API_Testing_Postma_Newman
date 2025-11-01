@@ -1,4 +1,0 @@
-pm.test("Status code is 200", () => pm.response.to.have.status(200));
-const json = pm.response.json();
-pm.expect(json).to.have.property("token");
-pm.environment.set("token", json.token);

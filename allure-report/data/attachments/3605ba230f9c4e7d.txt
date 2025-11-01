@@ -1,1 +1,0 @@
-{"bookingid":3424,"booking":{"firstname":"Eslam","lastname":"Roshdy","totalprice":250,"depositpaid":true,"bookingdates":{"checkin":"2025-09-10","checkout":"0NaN-aN-aN"},"additionalneeds":"Breakfast"}}
